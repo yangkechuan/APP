@@ -16,6 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NormalActivity"
+            android:label="@string/title_activity_normal" >
+        </activity>
+
+        <!--设置为dialog对话框的主题-->
+        <activity
+            android:name=".DialogActivity"
+            android:theme="@android:style/Theme.Dialog"
+            android:label="@string/title_activity_dialog" >
+        </activity>
     </application>
 
 </manifest>
