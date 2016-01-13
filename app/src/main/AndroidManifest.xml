@@ -16,9 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--
+        活动的启动模式：launchMode:
+                            1.standrd:可以在该活动中重复创建该活动(默认)
+                            2.singleTop:不能在该活动中重复创建该活动，如果该活动不在栈顶，则可以重新创建
+                            3.singleTask:只能存在一个该活动
+                            4.singleInstance:用于多个程序共享
+        -->
         <activity
             android:name=".NormalActivity"
-            android:label="@string/title_activity_normal" >
+            android:label="@string/title_activity_normal"
+            android:launchMode="singleTop"
+            >
+
         </activity>
 
         <!--设置为dialog对话框的主题-->
