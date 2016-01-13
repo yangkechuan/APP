@@ -43,6 +43,9 @@ public class MainActivity extends BaseActivity {
          */
         Button startNormalActivity = (Button) findViewById(R.id.start_normal_acticity);
         Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);
+        Button finishAll_btn = (Button) findViewById(R.id.finishAll_btn);
+
+
         startNormalActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +59,16 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,DialogActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        /**
+         * 通过调用ActivityCollecotr的finishAll()，随时都可以在当前活动退出APP
+         */
+        finishAll_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityCollector.finishAll();
             }
         });
     }
