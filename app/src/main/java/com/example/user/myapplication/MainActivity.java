@@ -28,7 +28,7 @@ import android.view.Window;
 import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
 
     public static final String TAG = "MainActivity";
 

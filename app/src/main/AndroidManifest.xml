@@ -27,16 +27,18 @@
         <activity
             android:name=".NormalActivity"
             android:label="@string/title_activity_normal"
-            android:launchMode="singleTop"
-            >
-
+            android:launchMode="singleTop" >
         </activity>
 
-        <!--设置为dialog对话框的主题-->
+        <!-- 设置为dialog对话框的主题 -->
         <activity
             android:name=".DialogActivity"
-            android:theme="@android:style/Theme.Dialog"
-            android:label="@string/title_activity_dialog" >
+            android:label="@string/title_activity_dialog"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".BaseActivity"
+            android:label="@string/title_activity_base" >
         </activity>
     </application>
 
