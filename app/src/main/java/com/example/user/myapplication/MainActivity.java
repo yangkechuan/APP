@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity {
         Button startNormalActivity = (Button) findViewById(R.id.start_normal_acticity);
         Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);
         Button finishAll_btn = (Button) findViewById(R.id.finishAll_btn);
+        Button bestFunStartNormalActivity = (Button) findViewById(R.id.best_fun_start_activity);
 
 
         startNormalActivity.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +70,18 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 ActivityCollector.finishAll();
+            }
+        });
+
+
+        /**
+         * 调用NormalActivity的actionStart方法启动活动
+         */
+
+        bestFunStartNormalActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NormalActivity.actionStart(MainActivity.this,"data1","data2");
             }
         });
     }

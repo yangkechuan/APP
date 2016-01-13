@@ -29,4 +29,11 @@
         android:textAllCaps="false"
         />
 
+    <Button
+        android:id="@+id/best_fun_start_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bestFunStartNormalActivity"
+        />
+
 </LinearLayout>
