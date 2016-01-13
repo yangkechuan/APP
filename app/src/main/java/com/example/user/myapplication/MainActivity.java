@@ -17,12 +17,14 @@
 package com.example.user.myapplication;
 
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 
@@ -36,6 +38,9 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         Log.i(TAG, "onCreate");
 
+        /**
+         * 设置两个button，进行Intent跳转，检测活动周期
+         */
         Button startNormalActivity = (Button) findViewById(R.id.start_normal_acticity);
         Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);
         startNormalActivity.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +59,34 @@ public class MainActivity extends ActionBarActivity {
             }
         });
     }
+
+
+
+    /**
+     * onSaveInstanceState使当前活动因为内存原因被销毁时，可以将临时数据进行保存
+     * 通过携带一个Bundle类型的参数，用于保存数据
+     * 然后通过修改onCreate()方法，再取出相应的值
+     * @param outState
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String tempData = "Something you just typed";
+        outState.putString("data_key",tempData);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+        Log.i(TAG, "onCreate");
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_main);
+        if (savedInstanceState != null){
+            String tempData = savedInstanceState.getString("data_key");
+            Log.i(TAG,tempData);
+        }
+    }
+
 
 
 
