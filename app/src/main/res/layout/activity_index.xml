@@ -20,6 +20,14 @@
         android:text="Button1"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/index_btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AlertDialog"
+        android:textAllCaps="false"
+        />
+
     <EditText
         android:id="@+id/index_editText1"
         android:layout_width="match_parent"
@@ -56,6 +64,14 @@
         android:layout_height="30dp"
         style="?android:attr/progressBarStyleHorizontal"
         android:max="100"
+        />
+
+    <TextView
+        android:id="@+id/index_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当前进度：0/100"
+        android:textAllCaps="false"
         />
 
 
