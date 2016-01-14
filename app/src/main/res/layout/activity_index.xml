@@ -28,6 +28,13 @@
         android:textAllCaps="false"
         />
 
+    <Button
+        android:id="@+id/index_btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ProgressDialog"
+        android:textAllCaps="false"/>
+
     <EditText
         android:id="@+id/index_editText1"
         android:layout_width="match_parent"

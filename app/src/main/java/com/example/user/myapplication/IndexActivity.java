@@ -2,6 +2,7 @@ package com.example.user.myapplication;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ import android.widget.Toast;
 
 public class IndexActivity extends Activity implements View.OnClickListener {
 
-    private Button index_btn1,index_btn2;
+    private Button index_btn1,index_btn2,index_btn3;
     private EditText index_editText1;
     private ImageView index_imageView1;
     private ProgressBar index_progressBar1,index_progressBar2;
@@ -37,6 +38,8 @@ public class IndexActivity extends Activity implements View.OnClickListener {
         index_btn1.setOnClickListener(this);
         index_btn2 = (Button) findViewById(R.id.index_btn2);
         index_btn2.setOnClickListener(this);
+        index_btn3 = (Button) findViewById(R.id.index_btn3);
+        index_btn3.setOnClickListener(this);
         index_editText1 = (EditText) findViewById(R.id.index_editText1);
         index_editText1.setOnClickListener(this);
         index_imageView1 = (ImageView) findViewById(R.id.index_imageView1);
@@ -77,6 +80,20 @@ public class IndexActivity extends Activity implements View.OnClickListener {
                 index_progressBar2.setProgress(progress);
                 index_textView1.setText("当前进度："+index_progressBar2.getProgress()+"/100");
                 break;
+
+
+            /**
+             * ProgressDialog与AlterDialog相似，如果setCancelable设置为false,则不可以通过Back取消
+             * 当数据加载完毕必须调用ProgressDialog的dismiss()方法来关闭对话框，否则ProgressDialog一直存在
+             */
+            case R.id.index_btn3:
+                ProgressDialog progressDialog = new ProgressDialog(IndexActivity.this);
+                progressDialog.setTitle("ProgressDialog");
+                progressDialog.setMessage("loading...");
+                progressDialog.setCancelable(true);
+                progressDialog.show();
+                break;
+
 
             /**
              * 通过AlterDialog.Builder创建一个AlertDialog实例，设置标题，内容，可否取消等属性
