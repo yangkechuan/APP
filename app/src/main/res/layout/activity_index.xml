@@ -28,4 +28,36 @@
         android:maxLines="2"
         />
 
+    <ImageView
+        android:id="@+id/index_imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <!---
+    控件的可见性：visibility:
+                    1.invisible:控件不可见，但仍然占据原来的位置和大小，可以理解为透明
+                    2.gone:控件不可见，且不再占用空间
+                    3.visible:可见（默认）
+
+    通过style可以修改样式,max属性更改最大值
+
+    -->
+    <ProgressBar
+        android:id="@+id/index_progressBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <ProgressBar
+        android:id="@+id/index_progressBar2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        />
+
+
+
 </LinearLayout>
