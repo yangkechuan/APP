@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 public class IndexActivity extends Activity implements View.OnClickListener {
 
-    private Button index_btn1,index_btn2,index_btn3,index_RelativeLayout_btn1,index_FrameLayout_btn1;
+    private Button index_btn1,index_btn2,index_btn3,index_RelativeLayout_btn1,index_FrameLayout_btn1,index_TableLayout_btn1;
     private EditText index_editText1;
     private ImageView index_imageView1;
     private ProgressBar index_progressBar1,index_progressBar2;
@@ -45,6 +45,8 @@ public class IndexActivity extends Activity implements View.OnClickListener {
         index_RelativeLayout_btn1.setOnClickListener(this);
         index_FrameLayout_btn1 = (Button) findViewById(R.id.index_FrameLayout_btn1);
         index_FrameLayout_btn1.setOnClickListener(this);
+        index_TableLayout_btn1 = (Button) findViewById(R.id.index_TableLayout_btn1);
+        index_TableLayout_btn1.setOnClickListener(this);
         index_editText1 = (EditText) findViewById(R.id.index_editText1);
         index_editText1.setOnClickListener(this);
         index_imageView1 = (ImageView) findViewById(R.id.index_imageView1);
@@ -96,6 +98,10 @@ public class IndexActivity extends Activity implements View.OnClickListener {
                 index_textView1.setText("当前进度："+index_progressBar2.getProgress()+"/100");
                 break;
 
+            case R.id.index_TableLayout_btn1:
+                Intent intent2 = new Intent(IndexActivity.this,TableLayout.class);
+                startActivity(intent2);
+                break;
 
             /**
              * ProgressDialog与AlterDialog相似，如果setCancelable设置为false,则不可以通过Back取消

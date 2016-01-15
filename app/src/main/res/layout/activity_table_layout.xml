@@ -1,0 +1,42 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.myapplication.TableLayout"
+    android:stretchColumns="1">
+
+    <!--
+    stretchColumns:表示如果表格不能完全占满屏幕宽度，就把第二列拉伸
+    layout_span：占满两列空间
+    -->
+    <TableRow>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="用户名："/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:maxLength="10"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="密码："/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textWebPassword"
+            android:maxLength="10"/>
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:layout_span="2"
+            android:textAllCaps="false"/>
+    </TableRow>
+</TableLayout>

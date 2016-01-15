@@ -52,6 +52,10 @@
             android:name=".FrameLayout"
             android:label="@string/title_activity_frame_layout" >
         </activity>
+        <activity
+            android:name=".TableLayout"
+            android:label="@string/title_activity_table_layout" >
+        </activity>
     </application>
 
 </manifest>

@@ -9,4 +9,5 @@
     <string name="title_activity_index">IndexActivity</string>
     <string name="title_activity_relative_layout">RelativeLayout</string>
     <string name="title_activity_frame_layout">FrameLayout</string>
+    <string name="title_activity_table_layout">TableLayout</string>
 </resources>
