@@ -35,6 +35,70 @@
         android:text="ProgressDialog"
         android:textAllCaps="false"/>
 
+
+    <!--
+    gravity:表示文字在控件中的对齐方式
+    layout_gravity:表示控件在布局中的对齐方式
+    weight算法：每个控件所占大小的比例：控件的weight值除以相加算出的总值
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/index_layout_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="layout_btn1"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/index_layout_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="layout_btn2"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/index_layout_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="layout_btn3"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+    <!--
+    通过设置EditTExt的weight为1，设置button为wrap_content
+    可以很好地在不同机型达到适配效果
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="editText_btn1"
+            android:textAllCaps="false"
+            />
+
+
+    </LinearLayout>
+
     <EditText
         android:id="@+id/index_editText1"
         android:layout_width="match_parent"
