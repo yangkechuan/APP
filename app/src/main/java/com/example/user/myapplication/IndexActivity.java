@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 public class IndexActivity extends Activity implements View.OnClickListener {
 
-    private Button index_btn1,index_btn2,index_btn3,index_RelativeLayout_btn1;
+    private Button index_btn1,index_btn2,index_btn3,index_RelativeLayout_btn1,index_FrameLayout_btn1;
     private EditText index_editText1;
     private ImageView index_imageView1;
     private ProgressBar index_progressBar1,index_progressBar2;
@@ -43,6 +43,8 @@ public class IndexActivity extends Activity implements View.OnClickListener {
         index_btn3.setOnClickListener(this);
         index_RelativeLayout_btn1 = (Button) findViewById(R.id.index_RelativeLayout_btn1);
         index_RelativeLayout_btn1.setOnClickListener(this);
+        index_FrameLayout_btn1 = (Button) findViewById(R.id.index_FrameLayout_btn1);
+        index_FrameLayout_btn1.setOnClickListener(this);
         index_editText1 = (EditText) findViewById(R.id.index_editText1);
         index_editText1.setOnClickListener(this);
         index_imageView1 = (ImageView) findViewById(R.id.index_imageView1);
@@ -80,6 +82,11 @@ public class IndexActivity extends Activity implements View.OnClickListener {
             case R.id.index_RelativeLayout_btn1:
                 Intent intent = new Intent(IndexActivity.this,RelativeLayout.class);
                 startActivity(intent);
+                break;
+
+            case R.id.index_FrameLayout_btn1:
+                Intent intent1 = new Intent(IndexActivity.this,FrameLayout.class);
+                startActivity(intent1);
                 break;
 
             case R.id.index_progressBar2://点击进度条，增加数值

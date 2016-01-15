@@ -56,10 +56,10 @@
             />
 
         <Button
-            android:id="@+id/index_layout_btn2"
+            android:id="@+id/index_FrameLayout_btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="layout_btn2"
+            android:text="FrameLayout"
             android:textAllCaps="false"
             android:layout_weight="1"
             />
