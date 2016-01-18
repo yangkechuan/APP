@@ -4,6 +4,7 @@
     tools:context="com.example.user.myapplication.IndexActivity"
     android:orientation="vertical">
 
+    <include layout="@layout/title"/>
     <TextView
         android:text="@string/hello_world"
         android:layout_width="wrap_content"
