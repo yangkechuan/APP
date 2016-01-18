@@ -4,7 +4,16 @@
     tools:context="com.example.user.myapplication.IndexActivity"
     android:orientation="vertical">
 
+    <!--
+    通过TitleLayout方法添加自定义控件，并在XML文件中通过完整类名方法导入，效果与下行代码一致
     <include layout="@layout/title"/>
+    -->
+
+    <com.example.user.myapplication.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.example.user.myapplication.TitleLayout>
     <TextView
         android:text="@string/hello_world"
         android:layout_width="wrap_content"
