@@ -10,10 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +59,7 @@ class FruitApapter extends ArrayAdapter<Fruit>{
          * 否则对convertView重用
          */
         View view;
-        
+
         if (convertView == null){
             view = LayoutInflater.from(getContext()).inflate(resourceID,null);
         }
@@ -89,6 +91,15 @@ public class ImageListView extends Activity {
         FruitApapter  adapter = new FruitApapter(ImageListView.this,R.layout.fruit_item,fruitList);
         ListView listView = (ListView) findViewById(R.id.activity_list_view2);
         listView.setAdapter(adapter);
+
+        //设置点击事件
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Fruit fruit = fruitList.get(position);
+                Toast.makeText(ImageListView.this,fruit.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initFruits(){
