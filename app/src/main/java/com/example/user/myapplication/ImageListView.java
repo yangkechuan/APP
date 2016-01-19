@@ -18,6 +18,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 定义一个实体类，作为ListView适配器的适配类型
+ */
 
 class Fruit{
 
@@ -48,7 +51,22 @@ class FruitApapter extends ArrayAdapter<Fruit>{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Fruit fruit = getItem(position);//获取当前项的Fruit实例
-        View view = LayoutInflater.from(getContext()).inflate(resourceID, null);
+        /**
+         * 优化1.
+         * 优化运行效率，防止每次都会重新加载布局,如果convertView为空使用Layoutinflater加载布局
+         * 否则对convertView重用
+         */
+        View view;
+        
+        if (convertView == null){
+            view = LayoutInflater.from(getContext()).inflate(resourceID,null);
+        }
+        else {
+            view = convertView;
+        }
+        //View view = LayoutInflater.from(getContext()).inflate(resourceID, null);
+
+
         ImageView  fruitImage = (ImageView) view.findViewById(R.id.fruit_image);
         TextView fruitName = (TextView) view.findViewById(R.id.fruit_name);
         fruitImage.setImageResource(fruit.getImageId());
