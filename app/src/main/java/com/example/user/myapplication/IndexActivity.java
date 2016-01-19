@@ -25,7 +25,7 @@ import android.widget.Toast;
 public class IndexActivity extends Activity implements View.OnClickListener {
 
     private Button index_btn1,index_btn2,index_btn3,index_RelativeLayout_btn1,index_FrameLayout_btn1,index_TableLayout_btn1;
-    private Button index_ListView_btn1,index_ListView_btn2;
+    private Button index_ListView_btn1,index_ListView_btn2,index_chat_btn;
     private EditText index_editText1;
     private ImageView index_imageView1;
     private ProgressBar index_progressBar1,index_progressBar2;
@@ -48,6 +48,8 @@ public class IndexActivity extends Activity implements View.OnClickListener {
         index_FrameLayout_btn1.setOnClickListener(this);
         index_TableLayout_btn1 = (Button) findViewById(R.id.index_TableLayout_btn1);
         index_TableLayout_btn1.setOnClickListener(this);
+        index_chat_btn = (Button) findViewById(R.id.index_chat_btn);
+        index_chat_btn.setOnClickListener(this);
         index_editText1 = (EditText) findViewById(R.id.index_editText1);
         index_editText1.setOnClickListener(this);
         index_imageView1 = (ImageView) findViewById(R.id.index_imageView1);
@@ -118,6 +120,12 @@ public class IndexActivity extends Activity implements View.OnClickListener {
                 Intent intent4 = new Intent(IndexActivity.this,ImageListView.class);
                 startActivity(intent4);
                 break;
+
+            case R.id.index_chat_btn:
+                Intent intent5 = new Intent(IndexActivity.this,ChatActivity.class);
+                startActivity(intent5);
+                break;
+
 
             /**
              * ProgressDialog与AlterDialog相似，如果setCancelable设置为false,则不可以通过Back取消

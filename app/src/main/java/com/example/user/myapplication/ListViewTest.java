@@ -5,8 +5,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class ListViewTest extends Activity {
@@ -21,9 +24,17 @@ public class ListViewTest extends Activity {
         /**
          * 数组中的数据需要通过适配器完成，android.R.layout.simple_list_item_1作为子项布局的ID
          */
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(ListViewTest.this,android.R.layout.simple_list_item_1,data);
-        ListView listView = (ListView) findViewById(R.id.activity_list_view);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(ListViewTest.this,android.R.layout.simple_list_item_1,data);
+        final ListView listView = (ListView) findViewById(R.id.activity_list_view);
         listView.setAdapter(adapter);
+
+        //监听事件,positon是data数组的下标
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Toast.makeText(ListViewTest.this,data[position],Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

@@ -64,6 +64,10 @@
             android:name=".ImageListView"
             android:label="@string/title_activity_image_list_view" >
         </activity>
+        <activity
+            android:name=".ChatActivity"
+            android:label="@string/title_activity_chat" >
+        </activity>
     </application>
 
 </manifest>
